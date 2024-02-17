@@ -1,0 +1,74 @@
+<%- include('partials/header.ejs'); -%>
+<title>aShop</title>
+<%- include('partials/header2.ejs'); -%> 
+<%if (locals.basketSize >0){%>
+<div class="basket_numberofItems"><%=basketSize%></div>
+<%}%>
+
+<%- include('partials/header3.ejs'); -%>
+<%if (locals.email){%>
+   <p class="email"><%=email%></p>
+   <%}else{%>
+    <p class="email">Welcome to aShop</p>
+    <%}%>
+<%- include('partials/header4.ejs'); -%>
+
+
+
+
+
+
+
+
+
+<div clas="product_container0" style="display: flex;justify-content: center;align-items: center;" >
+    <div class="product_container1" style="min-height: 460px;">
+     <div style="display: flex; justify-content: center; align-content: center; ">
+      <div class="shop_empty">
+        <div>
+            <img src="/images/default.jpg" class="image" alt="Justin">
+        </div>
+        
+         
+<%if (locals.email){%>
+    <h4><%=email%></h4>
+    <%}else{%>
+        <h4>Iustin Bacaila</h4>
+    <%}%>
+
+    <%if (locals.details){%>
+        <h4><%=details[0].fname%> <%=details[0].lname%></h4>
+        <p><%=details[0].address%></p>
+        <p><%=details[0].city%> <%=details[0].postcode%></p>
+        <p><%=details[0].country%></p>
+        <%}else{%>
+        <h4>No address information</h4>
+        <%}%>
+        <form method="get">
+            <button formaction="/edit/address" class="btn btn-primary w-30 py-2" type="submit">Edit Adress </button>
+            <button formaction="/logout" class="btn btn-primary w-40 py-2" type="submit">Logout</button>
+            </form>
+        <hr>
+        <h3>Ordered Items:</h3>
+       </div>
+      </div>
+   </div>
+</div>
+
+
+<div clas="product_container0" style="display: flex;justify-content: center;align-items: center;" >
+<div class="basket_container2">
+    <% if (locals.item) { for(var i=0; i<item.length; i++){%>
+    <div class="basket_item">
+        <img class="basketImage" src=<%=item[i].image%> width="200px" height="200px">
+        <h5 class="basket_item_title"><%=item[i].title%></h5>
+        <p class="desc basket_item_title" style="margin-top: 20px;"><%=item[i].description%></p>
+            <h5 class="checkoutPriceQuantity" ;">Price: £<%=item[i].price%></h5>
+            <h5 class="checkoutPriceQuantity">Quantity: <%=item[i].quantity%></h5>
+        </div>
+        <%}}%>
+    </div>
+</div>
+<hr>
+
+<%- include('partials/footer.ejs'); -%>

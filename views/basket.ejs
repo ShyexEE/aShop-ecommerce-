@@ -1,0 +1,97 @@
+<%- include('partials/header.ejs'); -%>
+<title>Basket</title>
+<%- include('partials/header2.ejs'); -%> 
+<%if (locals.basketSize >0){%>
+<div class="basket_numberofItems"><%=basketSize%></div>
+<%}%>
+<%- include('partials/header3.ejs'); -%>
+<%if (locals.email){%>
+   <p class="email"><%=email%></p>
+   <%}else{%>
+    <p class="email">Welcome to aShop</p>
+    <%}%>
+<%- include('partials/header4.ejs'); -%>
+
+
+
+
+
+
+<div style="display: flex;justify-content: center;">
+<div style="align-items: center;" class="basket_container3">
+
+    
+    <% if (locals.item) { for(var i=0; i<item.length; i++){%>
+    <div class="basket_item">
+        <img class="basketImage" src=<%=item[i].image%>>
+        <h5 class="basket_item_title"><%=item[i].title%></h5>
+        <p class="desc basket_item_title" style="margin-top: 20px;"><%=item[i].description%></p>
+            <div class="quantityBtn dropdown">
+              <%if (locals.item){%>
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <%=item[i].quantity%>&ensp;&ensp;&ensp;
+                </button>
+              <%}else{%>
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Quantity
+                </button>
+                  <%}%>
+                <ul class="dropdown-menu" >
+                  <li><h6 class="dropdown-header">Quantity</h6></li>
+                  <li><a class="dropdown-item" href="/quantity/1+<%=item[i].id%>">1</a></li>
+                  <li><a class="dropdown-item" href="/quantity/2+<%=item[i].id%>">2</a></li>
+                  <li><a class="dropdown-item" href="/quantity/3+<%=item[i].id%>">3</a></li>
+                  <li><a class="dropdown-item" href="/quantity/4+<%=item[i].id%>">4</a></li>
+                  <li><a class="dropdown-item" href="/quantity/5+<%=item[i].id%>">5</a></li>
+                  <li><a class="dropdown-item" href="/quantity/6+<%=item[i].id%>">6</a></li>
+                  <li><a class="dropdown-item" href="/quantity/7+<%=item[i].id%>">7</a></li>
+                  <li><a class="dropdown-item" href="/quantity/8+<%=item[i].id%>">8</a></li>
+                  <li><a class="dropdown-item" href="/quantity/9+<%=item[i].id%>">9</a></li>
+                  <li><a class="dropdown-item" href="/quantity/10+<%=item[i].id%>">10</a></li>
+                </ul>
+              </div>
+              <a method="delete" class="removeBtn" style="margin-left: 50px" href="/basket/delete/<%=item[i].id%>" style>Remove</a>
+            <h5 class="basket_itemPrice">£<%=item[i].quantity_price%></h5>
+        </div>
+        <%}}%>
+
+        <%if (item.length === 0 && !authentificated){%>
+        <div class="empty_shopp" style="display: flex; justify-content: center; align-content: center;">
+          <div class="shop_empty">
+                <h3> <img src="/images/shopping-cart.png" width="50px" height="50px" style="margin-right: 10px; margin-bottom: 10px;">Empty trolley!</h3>
+                <p><a href="/login">Sign in</a> to retrieve your items from your trolley and wishlist.</p>
+                <form method="get">
+                <button formaction="/"  class="btn btn-success w-100 py-2" type="submit">Start Shopping</button>
+                </form>
+                <p style="padding-top: 10px;"> Don't have an account with us? <a href="/register">Register</a></p>
+          </div>
+        </div>
+      <%}%>
+        
+      <%if (item.length === 0 && authentificated){%>
+        <div class="empty_shopp" style="display: flex; justify-content: center; align-content: center;">
+          <div class="shop_empty">
+                <h3> <img src="/images/shopping-cart.png" width="50px" height="50px" style="margin-right: 10px; margin-bottom: 10px;">Empty trolley!</h3>
+                <p>That's a shame, let's get started by browsing the best gifts, toys and tech aShop has to offer.</p>
+                <form method="get">
+                <button formaction="/"  class="btn btn-success w-100 py-2" type="submit">Start Shopping</button>
+                </form>
+          </div>
+        </div>
+      <%}%>
+
+</div>
+</div>
+<%if (item.length>0){%>
+<div style="display: flex; justify-content: center; align-content: end;">
+    <div class="price_container"><h3>Subtotal:&ensp;&ensp; £<%=item[0].total_price%></h3> <hr></div>
+    <div class="price_container2">
+      <form method="get" >
+       <button formaction="/checkout" style="margin-left: -100px;" class="btn btn-success rounded-pill px-3" type="submit">Checkout </button>
+      </form>
+    </div>
+</div>
+<%}%>
+
+
+<%- include('partials/footer.ejs'); -%>

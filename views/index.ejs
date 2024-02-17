@@ -1,0 +1,92 @@
+<%- include('partials/header.ejs'); -%>
+<title>aShop</title>
+<%- include('partials/header2.ejs'); -%>
+<%if (locals.basketSize >0){%>
+<div class="basket_numberofItems"><%=basketSize%></div>
+<%}%>
+
+<%- include('partials/header3.ejs'); -%>
+<%if (locals.email){%>
+   <p class="email"><%=email%></p>
+   <%}else{%>
+    <p class="email">Welcome to aShop</p>
+    <%}%>
+<%- include('partials/header4.ejs'); -%>
+
+
+
+<div style="display: flex; justify-content: center;">
+<div class="body_size">
+<div id="carouselExampleRide" class="carousel slide" data-bs-ride="true" >
+    <div class="carousel-inner">
+      <div class="carousel1 carousel-item active">
+        <img src="https://m.media-amazon.com/images/I/61+nypZSYRL._SX3000_.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel1 carousel-item">
+        <img src="https://m.media-amazon.com/images/I/61wh-0hPdyL._SX3000_.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel1 carousel-item">
+        <img src="https://m.media-amazon.com/images/I/71qod2ob-kL._SX3000_.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+
+  <div class="offerts">
+    <div  class="offerts_1stcontainer" style=" width: 379px; height: 400px;" >
+    <div style="width: 379px; height: 250px;" >
+      <a href="/items/electronics"><img style="width: 379px; height: 250px" src="https://media.output.com/app/uploads/2021/05/external-hard-drive-musicians-scaled.jpg?auto=format,compress"></a>
+    </div>
+    <h3 style="font-size: 25px;margin-top: 10px;">Tech these deals out</h3>
+    <p>Add to your device more memory with the new external hardrives</p>
+    <a href="/items/electronics">Shop now</a>
+    </div>
+
+    <div class="offerts_containers" >
+      <div style="width: 379px; height: 250px;" >
+       <a href="items/women's%20clothing"><img style="width: 379px; height: 250px" src="https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/02/20/12/lfwstreetstyle2002j.jpg?crop=8:5,smart&quality=75&auto=webp&width=1024"></a>
+      </div>
+      <h3 style="font-size: 25px; margin-top: 10px;">February Top Picks</h3>
+      <p>Make your wardrobe work for you this season. Enjoy the discounts prices with aShop</p>
+      <a href="items/women's%20clothing">Shop now</a>
+      </div>
+
+      <div class="offerts_containers">
+        <a href="/items/jewelery"><img style="width: 379px; height: 250px" src="https://www.brilliantearth.com/_next/image/?url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F9f2a69003c86470ea05deb9ecb9887be%252F09be57106204428a9c18cbc4a331658e&w=3840&q=100&dpl=v1706131243326"></a>
+        <h3 style="font-size: 25px;margin-top: 10px;">Love Through the Ages</h3>
+        <p>Discover the new Tiffany & Co. rings that have captured the wonder of love</p>
+        <a href="/items/jewelery">Shop now</a>
+      </div>
+        
+
+  </div>
+
+
+  <h2 class="h2"style="padding-left: 450px; padding-top: 20px;">Recomended products:</h2>
+  <hr> <div style="display: flex;justify-content: center;">
+    <div class="home_page">
+      <% if (locals.result) {for(var i=0; i<result.length; i++){%>
+      <div class="item_container">
+        <a href="/shop/<%=result[i].id%>" ><img class="content_img" style="height: 200px; width: 200px;" src=<%=result[i].image%>></a>
+        <a style = "color: black;text-decoration: none" href="/shop/<%=result[i].id%>"> <p class="space"><%=result[i].title.slice(0,45)%></p> </a>
+         <h5 style="font-weight: 480;" class="item_title">£<%=result[i].price%></h5>  
+      </div>
+      <%}}%>
+    </div>
+  </div>
+
+
+  </div>
+  </div>
+
+<%- include('partials/footer.ejs'); -%>

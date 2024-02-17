@@ -1,0 +1,554 @@
+body{
+    margin: 0px;
+}
+
+.pos{
+    padding-left: 1240px;
+    padding-top: -40px;
+}
+
+.button{
+    border: 0;
+    background-color: white;
+}
+
+.carousel1{
+    height: 500px;
+}
+
+
+.pos1{
+   display: flex;
+   padding-top: 50px;
+   padding-bottom: 200px;
+}
+
+
+.product_container0{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product_container1{
+   display: inline-block;
+   min-height: 500px;
+   width: 1300px;
+}
+.product_container_div1{
+    max-width: 160px;
+    min-width: 160px;
+    min-height: 300px;
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 40px;
+}
+
+.content_img{
+    width: 160px;
+    height: 160px;
+}
+.content_title{
+    width: 160px;
+    height: 80px;
+
+}
+.content_price{
+    width: 83px;
+    height: 22px;
+    padding-top: 20px;
+}
+
+
+.pos2{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.login{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.login1{
+    display: flex;
+    width: 500px;
+    height: 500px;
+    
+}
+
+.checked {
+    color: orange;
+  }
+
+.adding{
+    display: flex;
+    height: 50px;
+    width: 150px;
+    grid-row: 5 / 6;
+    grid-column: 4 / 5;
+}
+
+.centering_shop{
+    display: flex;
+    justify-content: center;
+}
+
+.shop{
+   height: 780px;
+   width: 1600px;
+   display: grid;
+   gap:3rem;
+   grid-template-rows: 50px 70px 100px 70px 120px 60px 40px;
+   grid-template-columns:50px 500px 50px 800px;
+}
+
+.price_position{
+    grid-row: 4 / 5;
+    grid-column:4 / 5 ;
+ }
+
+.item_title{
+    grid-row: 2 / 3;
+    grid-column:4 / 5 ;
+}
+.item_image{
+    grid-row: 2 / 4;
+    grid-column: 2 / 3;
+}
+.item_description{
+    grid-row: 3 / 4;
+    grid-column: 4 / 5;
+}
+
+
+
+.body_size{
+    width: 1300px
+}
+.offerts{
+    display:inline-flex; 
+    width: 1300;height: 400px; 
+    margin-top: 50px;
+     margin-bottom:50px;
+}
+
+@media(max-width:1300px){
+
+    .shop{
+        height: 1000px;
+        grid-template-rows: 20px 70px 70px 70px 120px 60px 40px 40px 80px  20px;
+        grid-template-columns:50px 150px 800px;
+    }
+
+    .item_title{
+        grid-row: 6 / 7;
+        grid-column:3 / 4 ;
+    }
+    .item_image{
+        grid-row: 2 / 4;
+        grid-column: 3 / 4;
+    }
+    .item_description{
+        grid-row: 7 / 8;
+        grid-column: 3 / 4;
+    }
+    .adding{
+        grid-column: 3 / 4;
+        grid-row: 9/ 10;
+    }
+    .h2{
+        display: none;
+    }
+    .home_page{
+        float:top;
+    }
+    .carousel1{
+        height: 400px;
+    }
+    .price_position{
+        grid-column: 3 / 4;
+        grid-row: 8/ 9;
+    }
+}
+@media(max-width:650px){
+    .carousel1{
+        height: 170px;
+    }
+}
+
+.home_page{
+   width: 1700px;
+   min-height: 400px;
+   display: inline-block;
+}
+
+.item_container{
+    width: 200px;
+    height: 300px;
+    
+    float: left;
+    margin: 30px;
+}
+.item_title{
+    float: bottom;
+}
+
+
+.carousel2{
+    height: 600px;
+}
+
+.basket_container3{
+    display: inline;
+    width: 1300px;
+    min-height: 723px;
+}
+
+.basket_container{
+    display: inline;
+    width: 1300px;
+    min-height: 20px;
+}
+
+.basket_container2{
+    display: inline;
+    width: 1300px;
+    min-height: 100px;
+}
+
+
+.basket_item{
+    width: 1000px;
+    min-height: 250px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+.basket_item_title{
+    margin-top: 50px;
+    margin-left: 250px;
+}
+.price_container{
+    width: 1000px;
+    height: 100px;
+    
+}
+
+.price_container2{
+    width: 200px;
+    height: 100px;
+}
+
+.shop_empty{
+    width: 300px;
+    height: 250px;
+    text-align: center;
+}
+
+.basket_numberofItems{
+    width: 18px; 
+    height: 18px; 
+    background-color: brown;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+    bottom: 20px;
+    right: 8px;
+}
+
+.email{
+    position: relative;
+    right: 250px; 
+    top:40px;
+}
+
+@media(max-width:768px){
+    .email{
+        right: 350px
+    }
+}
+
+
+@media(max-width:400px){
+    .email{
+        right: 290px
+    }
+}
+
+.image{
+    border-radius: 50%;
+    height: 150px;
+    border: 3px solid black;
+  }
+
+.address_container{
+    width: 400px;
+    height: 300px;
+    border-radius: 50px;
+    padding: 30px;
+    background-color: #ccc;
+
+}
+
+.price{
+  font-style: Sans-serif;
+  font-weight: 480;
+  font-size:17px;
+  color: #222;
+}
+.space{
+    min-height: 50px;
+}
+
+.offerts_containers{
+    margin-left: 80px; width: 379px; height: 400px;
+}
+.hr{
+   color: white;
+}
+.item_image{
+  height: 500px;
+  width: 500px;
+}
+.empty_shopp{
+    margin-top: 200px;
+}
+.basketImage{
+    float: left;
+    width:200px;
+     height:200px
+}
+.basket_itemPrice{
+    margin-left:350px; 
+    margin-top: -53px;
+}
+.quantityBtn{
+    margin-left: 250px;
+}
+.login{
+    display: flex; justify-content: center; align-items: center; padding-top: 300px; padding-bottom: 150px;
+}
+.checkoutPriceQuantity{
+    margin-left:250px;
+}
+.beforeItemgap{
+    display: flex;padding-top: 40px;padding-bottom: 60px; margin-left: 60px;
+}
+.address{
+    display: flex;justify-content: center; padding-left: 400px; padding-bottom: 50px;
+}
+.register{
+    display: flex; justify-content: center; align-items: center; padding-top: 300px; padding-bottom: 150px;
+}
+.registerPadding{
+    padding-bottom: 150px;
+    padding-top: 20px;
+}
+.edit_address{
+    width: 1300px;padding-left: 300px;padding-top: 300px;
+}
+.position_btttn{
+    margin-left: 1000px;
+}
+.btn_back{
+    margin-left: 1350px; margin-top: -75px;
+}
+.edit_payment{
+    margin-left: 1000px;
+}
+.payment_goback{
+    margin-left: 1350px; margin-top: -75px;
+}
+.payment_div{
+    padding: 30px; width: 600px; margin-top: 400px;
+}
+@media (max-height: 845px) and (max-width: 391px) {
+    .special{
+       margin-left: -20px;
+    }
+    .body_size{
+        width: 390px;
+    }
+    .offerts{
+        width: 390px;
+        display: inline;
+    }
+    .offerts_containers{
+      margin-left: 5px;
+    }
+    .offerts_1stcontainer{
+        margin-left: 5px;
+    }
+    .item_container{
+        margin-left: 90px;
+    }
+    .payment{
+       margin-left: 10px;
+    }
+    .socials{
+        position: relative;
+        left:90px;
+    }
+    .product_container_div1{
+        margin-left: 100px;
+    }
+    .hr{
+        color: black;
+    }
+    .item_image{
+       width: 250px;
+       height: 250px;
+       margin-left: 130px;
+    }
+    .item_title{
+        width: 300px;
+        grid-row: 4 / 5;
+        grid-column: 3 / 4;
+        margin-left: 120px;
+        margin-top: 40px;
+    }
+    .item_description{
+        width: 300px;
+        margin-left: 120px;
+        margin-top: -190px;
+    }
+    .adding{
+        margin-left: 190px;
+    }
+    .shop{
+        min-height: 800px;
+    }
+    .basket_container3{
+        min-height: 300px;
+    }
+    .empty_shopp{
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+    .basket_item{
+      
+        width: 350px;
+        min-height: 175px;
+        margin-left: 30px;
+        margin-top: 0px;
+    }
+    .basket_item_title{
+        width: 350px;
+        position: relative;
+        top: 150px;
+        right: 250px;
+    }
+    .basketImage{
+        width: 135px;
+        height: 135px;
+    }
+    .desc{
+       display: none;
+    }
+    .basket_item_title{
+        width: 213px;
+        height: 39px;
+        position: relative;
+        left: -100px;
+        top: 10px;
+        font-size: 17px
+    }
+    .quantityBtn{
+        position: relative;
+        top: 100px;
+        right: 210px;
+    }
+    .basket_itemPrice{
+        position: relative;
+        top:65px;
+        left: -200px
+    }
+    .removeBtn{
+        position: relative;
+        left: -35px;
+        top: 72px
+    }
+    .price_container{
+        margin-left: 25px;
+        margin-top: 3px;
+    }
+    .login{
+        padding-top: 100px;
+        padding-bottom: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .checkoutPriceQuantity{
+        margin-left: 40px;
+        position: relative;
+        top: 40px;
+        left: 15px;
+        font-size: 16px;
+    }
+    .itemm{
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+    .beforeItemgap{
+        padding-bottom: 0px;
+    }
+    .address{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .address_container{
+        margin-left: -100px;
+        margin-right: 40px;
+    }
+    .basket_container1{
+        padding-left: 10px;
+        width: 390px;
+    }
+    .btnn{
+        display: none;
+    }
+    .paym{
+        display: none;
+    }
+    .register{
+        padding-top: 100px;
+        padding-bottom:50px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .registerPadding{
+        padding-bottom: 0px;
+        padding-top: 40px;
+    }
+    .price_position{
+        margin-left: 120px;
+    }
+    .edit_address{
+        width: 390px;
+        padding-left: 10px;
+        padding-top: 80px;
+        padding-right: 10px;
+    }
+    .position_btttn{
+      margin-left: 0px;
+    }
+    .btn_back{
+        margin-left: 200px;
+        margin-top: -75px;
+    }
+    .edit_payment{
+      margin-left:20px;
+    }
+    .payment_goback{
+        margin-left: 200px;
+        margin-top: -75px;
+    }
+    .payment_div{
+     margin-top: 100px;
+     margin-bottom: 50px;
+    }
+}

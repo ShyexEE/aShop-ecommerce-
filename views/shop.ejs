@@ -1,0 +1,44 @@
+<%- include('partials/header.ejs'); -%>
+<%if(locals.title){%>
+  <title><%=title%></title>
+  <%}else{%>
+    <title>aShop</title>
+  <%}%>
+<%- include('partials/header2.ejs'); -%> 
+<%if (locals.basketSize >0){%>
+<div class="basket_numberofItems"><%=basketSize%></div>
+<%}%>
+
+<%- include('partials/header3.ejs'); -%>
+<%if (locals.email){%>
+   <p class="email"><%=email%></p>
+   <%}else{%>
+    <p class="email">Welcome to aShop</p>
+    <%}%>
+<%- include('partials/header4.ejs'); -%>
+
+
+
+
+
+
+<%if (locals.item){%>
+<div class="centering_shop">
+  <div class="shop">
+    <img class="item_image"src=<%=item.image%>>
+    <h2 class="item_title"><%=item.title%></h2>
+    <p class="item_description"><%=item.description%></p>
+    <p style="font-size: 23px;" class="price_position price">£<%=item.price%></p>
+    <div class="adding" ><form method="post"> 
+      <button formaction="/shop/<%=item.id%>" class="btn btn-primary w-100 py-2" type="submit">Add to Basket</button> </form></div>
+</div>
+</div>
+<hr style="height: 3px;"/>
+<%}%>
+
+
+
+    
+    
+ 
+ <%- include('partials/footer.ejs'); -%>
