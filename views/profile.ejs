@@ -58,7 +58,7 @@
 
 <div clas="product_container0" style="display: flex;justify-content: center;align-items: center;" >
 <div class="basket_container2">
-    <% if (locals.item) { for(var i=0; i<item.length; i++){%>
+    <% if (locals.item) { for(var i=item.length; i--;){%>
     <div class="basket_item">
         <img class="basketImage" src=<%=item[i].image%> width="200px" height="200px">
         <h5 class="basket_item_title"><%=item[i].title%></h5>
