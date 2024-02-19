@@ -101,7 +101,7 @@ body{
    width: 1600px;
    display: grid;
    gap:3rem;
-   grid-template-rows: 50px 70px 100px 70px 120px 60px 40px;
+   grid-template-rows: 50px 70px 140px 60px 120px 60px 40px;
    grid-template-columns:50px 500px 50px 800px;
 }
 
@@ -366,7 +366,16 @@ body{
 .payment_div{
     padding: 30px; width: 600px; margin-top: 400px;
 }
+.loading{
+    display: flex;justify-content: center;padding-top: 600px;
+}
 @media (max-height: 845px) and (max-width: 391px) {
+    .item_description{
+        min-height: 100px;
+        white-space: normal;
+         overflow: hidden;
+         text-overflow:fade;
+    }
     .special{
        margin-left: -20px;
     }
@@ -550,5 +559,8 @@ body{
     .payment_div{
      margin-top: 100px;
      margin-bottom: 50px;
+    }
+    .loading{
+        padding-top: 400px;
     }
 }
