@@ -101,10 +101,19 @@ app.get("/checkout",async (req, res) => {
   
 app.post("/edit/address",async (req, res) => {
   isAuth(req.isAuthenticated())
+   const detailsDb = await db.query("SELECT details FROM users_details WHERE id = $1 ", [
+    req.user.id
+  ])
    const array = []
    array.push(req.body)
-   const updatedPayment = JSON.stringify(array)
-  await db.query("UPDATE users_details SET details = ($1) WHERE id = $2", [updatedPayment, req.user.id]);
+     const updatedAddress = JSON.stringify(array)
+   if (detailsDb.rows.length<1){
+    await db.query("INSERT INTO users_details (details, id) VALUES ($1, $2)",
+   [updatedAddress, req.user.id]
+ );
+}else{
+  await db.query("UPDATE users_details SET details = ($1) WHERE id = $2", [updatedAddress, req.user.id]);
+   }
   res.redirect("/loading")
 })
 
@@ -353,7 +362,11 @@ app.post("/checkout", async (req, res)=>{
      await db.query("INSERT INTO users_details (basket, id) VALUES ($1, $2)",
       [basket_json, req.user.id]
     );
-    }else{
+    }else if(basketDb.rows[0]===undefined || basketDb.rows[0].basket===null){
+      const basket_json = JSON.stringify(basket);
+      await db.query("UPDATE users_details SET basket = ($1) WHERE id = $2",
+      [basket_json, req.user.id]
+      );}else{
       const databaseBasket = JSON.parse(basketDb.rows[0].basket)
       const updatedBasket =databaseBasket.concat(basket)
        const updatedBasketJson = JSON.stringify(updatedBasket);
