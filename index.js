@@ -581,6 +581,7 @@ passport.deserializeUser((user, cb) => {
 });
 
 
-app.listen(process.env.PORT || port, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+  
