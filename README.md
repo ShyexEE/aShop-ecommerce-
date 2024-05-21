@@ -1,27 +1,23 @@
-aShop it's an eCommerce website!
 
-This website contain:
--search methods
--account authentification
--basket manager
--cookies
--authentification with Google. (Every Log In and Register the website get an typeError, the website will work as normal and will authentificate / register to google, Go to Main page after error show, "I will fix it in the next day sorry for that")
--checkout
--payment method  (this field  it's not mandatory, Any data sent by mistake it's protected)
--address         (this field  it's not mandatory, Any data sent by mistake it's protected)
+aShop
+aShop is an eCommerce website designed to provide a seamless online shopping experience.
 
+Features
+Search Methods: Efficient product search functionality.
+Account Authentication: Secure login and registration.
+Basket Manager: Easy management of your shopping cart.
+Cookies: Utilizes cookies for enhanced user experience.
+Authentication with Google: Sign in or register with your Google account.
+Note: Currently, every login and registration triggers a TypeError. However, the website will still authenticate/register with Google and redirect to the main page after the error. This issue will be fixed soon; we apologize for the inconvenience.
+Checkout: Simple and secure checkout process.
+Payment Methods: Various payment options available. (This field is not mandatory. Any data sent by mistake is protected.)
+Address: Add your address for shipping. (This field is not mandatory. Any data sent by mistake is protected.)
+Demo Accounts
+You can use the following demo accounts to explore the website:
 
-Demo accounts:
+john.willis@gmail.com / 12345
+james.bond@gmail.com / 12345
+Or use any account you wish.
+Website
+Visit the website: aShop
 
-john.willis@gmail.com
-12345
-
-james.bond@gmail.com
-12345
-
-or any account you wish.
-
-
-Website:
-
-https://ashopp.onrender.com
