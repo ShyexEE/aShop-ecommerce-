@@ -4,7 +4,7 @@ aShop is an eCommerce website designed for businesses to sell their products onl
 
 ## Features
 
-- **Search Methods:** Efficient product search functionality implemented by myself.
+- **Search Methods:** Efficient product search functionality invented by myself.
 - **Account Authentication:** Secure login and registration.
 - **Basket Manager:** Easy management of your shopping cart.
 - **Cookies:** Utilizes cookies for enhanced user experience.
