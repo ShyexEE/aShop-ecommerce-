@@ -1,6 +1,6 @@
 # aShop
 
-aShop is an eCommerce website designed to provide a seamless online shopping experience. 
+aShop is an eCommerce website designed for businesses to sell their products online.
 
 ## Features
 
