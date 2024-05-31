@@ -533,7 +533,7 @@ passport.use(
         return cb("User not found");
       }
     } catch (err) {
-      console.log(err);
+      console.log(err, "this is internal");
     }
   })
 );
