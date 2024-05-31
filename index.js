@@ -459,7 +459,7 @@ app.get(
 );
 
 app.get(
-  "/auth/google",
+  "/auth/google/login",
   passport.authenticate("google", {
     successRedirect: "/profile",
     failureRedirect: "/login",
