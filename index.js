@@ -451,16 +451,8 @@ function basket_quantity(){
 }
 
 
-app.post(
-  "/login",
-  passport.authenticate("local", {
-    successRedirect: "/profile",
-    failureRedirect: "/login",
-  })
-);
-
 app.get(
-  "/auth/google/login",
+  "/auth/google",
   passport.authenticate("google", {
     scope: ["profile", "email"],
   })
@@ -474,7 +466,13 @@ app.get(
   })
 );
 
-
+app.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/profile",
+    failureRedirect: "/login",
+  })
+);
 
 
 
