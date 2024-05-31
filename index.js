@@ -520,7 +520,7 @@ passport.use(
         bcrypt.compare(password, storedHashedPassword, (err, valid) => {
           if (err) {
             console.error("Error comparing passwords:", err);
-            return cb(err);
+            return cb(err, "this is internal");
           } else {
             if (valid) {
               return cb(null, user);
