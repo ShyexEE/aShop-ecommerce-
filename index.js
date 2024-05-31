@@ -463,12 +463,12 @@ app.get(
  passport.authenticate('google'), 
   (err, req, res, next) => { 
     if (err.name === 'TokenError') {
-     res.redirect('/profile'); 
+     res.redirect('/basket');  //ignore the the error, it doesn't affect the website
     } else {
      //handle Error
     }
   },
-  (req, res) => { // On success, redirect back to '/'
+  (req, res) => { 
     res.redirect('/');
   }
 );
