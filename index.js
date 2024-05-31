@@ -460,14 +460,27 @@ app.get(
 
 app.get(
   "/auth/google/login",
-  passport.authenticate("google", {
-    //successRedirect: "/profile",
-    failureRedirect: "/login",
-  }),
-  async (req, res) => {
-    res.redirect("/");
+ passport.authenticate('google'), 
+  (err, req, res, next) => { 
+    if (err.name === 'TokenError') {
+     res.redirect('/login'); 
+    } else {
+     //handle Error
+    }
+  },
+  (req, res) => { // On success, redirect back to '/'
+    res.redirect('/');
   }
 );
+);
+
+//app.get(
+//  "/auth/google/login",
+ // passport.authenticate("google", {
+//    successRedirect: "/profile",
+//    failureRedirect: "/login",
+//  })
+//  );
 
 app.post(
   "/login",
