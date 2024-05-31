@@ -452,14 +452,14 @@ function basket_quantity(){
 
 
 app.get(
-  "/auth/google",
+  "/auth/google/login",
   passport.authenticate("google", {
     scope: ["profile", "email"],
   })
 );
 
 app.get(
-  "/auth/google/login",
+  "/auth/google",
   passport.authenticate("google", {
     successRedirect: "/profile",
     failureRedirect: "/login",
