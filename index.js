@@ -1,4 +1,4 @@
-import express from "express";
+ import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
 import pg from "pg";
@@ -473,12 +473,6 @@ app.post(
     failureRedirect: "/login",
   })
 );
-
-app.use((err, req, res, next) => {
-    if (err.status === 500) {
-        res.redirect('/basket');
-    } 
-
 
 app.post("/register",async (req, res) => {
   const email= req.body.email
