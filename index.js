@@ -461,9 +461,12 @@ app.get(
 app.get(
   "/auth/google/login",
   passport.authenticate("google", {
-    successRedirect: "/profile",
+    //successRedirect: "/profile",
     failureRedirect: "/login",
-  })
+  }),
+  async (req, res) => {
+    res.redirect("/");
+  }
 );
 
 app.post(
