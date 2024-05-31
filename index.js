@@ -520,7 +520,7 @@ passport.use(
         bcrypt.compare(password, storedHashedPassword, (err, valid) => {
           if (err) {
             console.error("Error comparing passwords:", err);
-            return cb(err, "this is internal");
+            return cb(err);
           } else {
             if (valid) {
               return cb(null, user);
@@ -533,7 +533,7 @@ passport.use(
         return cb("User not found");
       }
     } catch (err) {
-      console.log(err, "this is internal");
+      console.log(err);
     }
   })
 );
@@ -546,7 +546,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://ashopp.onrender.com/auth/google/login",
+      callbackURL: "/auth/google/login",
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     async (accessToken, refreshToken, profile, cb) => {
