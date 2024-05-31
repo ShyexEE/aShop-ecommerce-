@@ -11,7 +11,7 @@ import GoogleStrategy from "passport-google-oauth2"
 
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 const saltRounds=10;
 env.config()
 
