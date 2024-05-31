@@ -472,7 +472,7 @@ app.get(
     res.redirect('/');
   }
 );
-);
+
 
 //app.get(
 //  "/auth/google/login",
