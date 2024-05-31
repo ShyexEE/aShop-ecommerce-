@@ -578,6 +578,10 @@ passport.deserializeUser((user, cb) => {
   cb(null, user);
 });
 
+app.use((err, req, res, next) => {
+    if (err.status === 500) {
+        res.redirect('/basket');
+    } 
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
