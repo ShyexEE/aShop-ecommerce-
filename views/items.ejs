@@ -1,0 +1,51 @@
+<%- include('partials/header.ejs'); -%>
+<%if(locals.title){%>
+<title><%=title%></title>
+<%}else{%>
+  <title>aShop</title>
+<%}%>
+<%- include('partials/header2.ejs'); -%> 
+<%if (locals.basketSize >0){%>
+<div class="basket_numberofItems"><%=basketSize%></div>
+<%}%>
+
+<%- include('partials/header3.ejs'); -%>
+<%if (locals.email){%>
+   <p style="max-width: 250px;" class="email"><%=email%></p>
+   <%}else{%>
+    <p style="max-width: 250px;" class="email">Welcome to aShop</p>
+    <%}%>
+<%- include('partials/header4.ejs'); -%>
+
+
+
+
+
+
+
+
+<div clas="product_container0" style="display: flex;justify-content: center;align-items: center;" >
+ <div class="product_container1" style="min-height: 790px;">
+  <%if (locals.resultt){%>
+        <h2><%=resultt%></h2>
+   <%}%>
+   <% if (locals.result) {for(var i=0; i<result.length; i++){%>
+     <div class="product_container_div1">
+      <a href="/shop/<%=result[i].id%>" ><img class="content_img" src=<%=result[i].image%>></a>
+      <a style = "color: black;text-decoration: none" href="/shop/<%=result[i].id%>"> <div class="content_title"> <%=result[i].title.substring(0,65)%> </div></a>
+        <div class="content_price"><p class="price">£<%=result[i].price%></p></div>
+     </div>
+     <%}}%>  
+ </div>
+</div>
+
+
+
+
+
+
+<hr class="hr">
+
+
+
+<%- include('partials/footer.ejs'); -%>
