@@ -7,7 +7,7 @@ import passport from "passport";
 import { Strategy } from "passport-local";
 import env from "dotenv"
 import GoogleStrategy from "passport-google-oauth2"
-import bcrypt  from 'bcrypt'
+import bcrypt  from '@node-rs/bcrypt'
 
 const app = express();
 const port = 3000;
